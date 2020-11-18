@@ -12,14 +12,16 @@ class Battle {
   fight() {
     // players turn
     if (this.turn % 2 !== 0) {
-      console.log(`${this.player.name}'s turn, Fight!!`);
-      console.log(`${this.pokemon1.name}: ${this.pokemon1.talk()}!!`);
+      console.log(
+        `${this.player.name}'s turn, you are battling ${this.pokemon2.name}. Fight!!`
+      );
+      console.log(`${this.pokemon1.name}: ${this.pokemon1.talk()}!!\n`);
 
       // pokemon1 strong against pokemon2
       if (this.pokemon1.strength[0] === this.pokemon2.type) {
         this.pokemon2.hitPoints -= this.pokemon1.attackDamage * 1.25;
 
-        console.log(`${this.pokemon1.name} uses ${this.pokemon1.move}.....`);
+        console.log(`${this.pokemon1.name} uses ${this.pokemon1.move}`);
         console.log(
           `${this.pokemon2.name} lost ${
             this.pokemon1.attackDamage * 1.25
@@ -35,7 +37,7 @@ class Battle {
       else if (this.pokemon1.weakness[0] === this.pokemon2.type) {
         this.pokemon2.hitPoints -= this.pokemon1.attackDamage * 0.75;
         console.log(
-          `${this.pokemon1.name}'s move was not that effective against ${this.pokemon2.name}.....`
+          `${this.pokemon1.name}'s move was not that effective against ${this.pokemon2.name}...`
         );
         if (this.pokemon2.hitPoints > 0) {
           console.log(
@@ -46,7 +48,7 @@ class Battle {
       // even playing ground
       else {
         this.pokemon2.hitPoints -= this.pokemon1.attackDamage;
-        console.log(`${this.pokemon1.name} makes their attack.....`);
+        console.log(`${this.pokemon1.name} makes their attack...`);
         console.log(
           `${this.pokemon2.name} lost ${this.pokemon1.attackDamage} hit points!`
         );
@@ -60,13 +62,13 @@ class Battle {
     //opponents turn
     if (this.turn % 2 === 0) {
       console.log(`${this.opponent.name}'s turn, Fight!!`);
-      console.log(`${this.pokemon2.name}: ${this.pokemon2.talk()}!!`);
+      console.log(`${this.pokemon2.name}: ${this.pokemon2.talk()}!!\n`);
 
       // pokemon2 strong against pokemon1
       if (this.pokemon2.strength[0] === this.pokemon1.type) {
         this.pokemon1.hitPoints -= this.pokemon2.attackDamage * 1.25;
 
-        console.log(`${this.pokemon2.name} uses ${this.pokemon2.move}.....`);
+        console.log(`${this.pokemon2.name} uses ${this.pokemon2.move}`);
         console.log(
           `${this.pokemon1.name} lost ${
             this.pokemon2.attackDamage * 1.25
@@ -82,7 +84,7 @@ class Battle {
       else if (this.pokemon2.weakness[0] === this.pokemon1.type) {
         this.pokemon1.hitPoints -= this.pokemon2.attackDamage * 0.75;
         console.log(
-          `${this.pokemon2.name} move was not that effective against ${this.pokemon1.name}.....`
+          `${this.pokemon2.name}'s move was not that effective against ${this.pokemon1.name}...`
         );
         if (this.pokemon1.hitPoints > 0) {
           console.log(
@@ -93,7 +95,7 @@ class Battle {
       // even playing ground
       else {
         this.pokemon1.hitPoints -= this.pokemon2.attackDamage;
-        console.log(`${this.pokemon2.name} makes their attack.....`);
+        console.log(`${this.pokemon2.name} makes their attack...`);
         console.log(
           `${this.pokemon1.name} lost ${this.pokemon2.attackDamage} hit points!`
         );
@@ -114,7 +116,7 @@ class Battle {
     }
 
     // pokemon 2 out of health
-    if (this.pokemon2.hitPoints <= 0) {
+    else if (this.pokemon2.hitPoints <= 0) {
       console.log(
         `${this.pokemon2.name} has fainted!\n${this.player.name} wins!`
       );

@@ -56,9 +56,7 @@ const bulbasaur = new Pokemon(
 squirtle.setStrengthAndWeakness();
 bulbasaur.setStrengthAndWeakness();
 
-const rattata = new Pokemon("Rattata", 6, 4, "chomp", "run away!");
-const jigglypuff = new Pokemon("Jigglypuff", 5, 3, "singgg", "cute charm");
+const rattata = new Pokemon("Rattata", 190, 39, "chomp", "run away!");
+const jigglypuff = new Pokemon("Jigglypuff", 201, 30, "singgg", "cute charm");
 
-const pokeDeck = [rattata, jigglypuff, squirtle, bulbasaur];
-
-module.exports = { Pokemon, pokeDeck };
+module.exports = { Pokemon, rattata, jigglypuff, squirtle, bulbasaur };
