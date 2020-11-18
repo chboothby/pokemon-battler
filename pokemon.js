@@ -36,4 +36,29 @@ class Pokemon {
   }
 }
 
-module.exports = { Pokemon };
+// create pokemon
+const squirtle = new Pokemon(
+  "Squirtle",
+  287,
+  40,
+  "squeeeeeee!",
+  "water gun",
+  "water"
+);
+const bulbasaur = new Pokemon(
+  "Bulbasaur",
+  301,
+  41,
+  "bulbaah!",
+  "whippp!",
+  "grass"
+);
+squirtle.setStrengthAndWeakness();
+bulbasaur.setStrengthAndWeakness();
+
+const rattata = new Pokemon("Rattata", 6, 4, "chomp", "run away!");
+const jigglypuff = new Pokemon("Jigglypuff", 5, 3, "singgg", "cute charm");
+
+const pokeDeck = [rattata, jigglypuff, squirtle, bulbasaur];
+
+module.exports = { Pokemon, pokeDeck };
