@@ -5,6 +5,7 @@ class Pokemon {
     this.attackDamage = attackDamage;
     this.sound = sound;
     this.move = move;
+    this.type = type;
     this.strength = [];
     this.weakness = [];
   }
@@ -14,7 +15,7 @@ class Pokemon {
   }
 
   useYourMoves() {
-    return this.moves;
+    return this.move;
   }
 
   setStrengthAndWeakness() {
