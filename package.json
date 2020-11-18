@@ -2,7 +2,7 @@
   "name": "pokemon-battler",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "battle.js",
   "scripts": {
     "test": "jest --watch"
   },
