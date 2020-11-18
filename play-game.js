@@ -11,7 +11,14 @@ const {
 
 console.log(`Are you ready to play some Pokemon?!`);
 
+const terminalImage = require("terminal-image");
+
+(async () => {
+  console.log(await terminalImage.file("img/pokeball.png", { width: 40 }));
+})();
+
 const questions = [
+  { type: "input", name: "hitEnter", message: "Hit enter to start" },
   { type: "input", name: "name", message: "Hi there! What is your name?" },
   {
     type: "list",
